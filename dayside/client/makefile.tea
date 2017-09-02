@@ -1,0 +1,36 @@
+Script {
+    @append {
+        var require_bkup = window.require;
+    }
+    @append "lib/monaco/min/vs/loader.js";
+    @append {
+        monaco_require = require;
+        window.require = require_bkup;
+    }
+    
+    @append "lib/jstree/jquery.jstree.js";
+    @append "lib/jstree/jquery.cookie.js";
+    @append "lib/jstree/jquery.hotkeys.js";
+    
+    @append "lib/jstree.storage.js";
+    
+    @append "lib/require.js";
+    
+    @append "lib/plupload.full.min.js";
+    @append "lib/jquery.ui.plupload.js";
+    
+    @append 'src/controls/codeTab.js';
+    @append 'src/controls/filePanel.js';
+    @append 'src/controls/optionsButton.js';
+    @append 'src/controls/editorPanel.js';
+    @append 'src/controls/uploadDialog.js';
+    @append 'src/controls/searchDialog.js';
+    
+    @append "src/fileApi.js";
+    @append "src/app.js";
+}
+
+@append "lib/jstree/themes/default/style.css";
+@append "lib/theme/dark_ui.css";
+@import "lib/theme/background.tea";
+@import "src/style.tea";

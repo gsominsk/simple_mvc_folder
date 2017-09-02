@@ -1,0 +1,197 @@
+.no-m-p {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.img-wraper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	img {
+		max-width: 100%;
+		max-height: 100%;
+	}
+}
+.flat {
+	font-size: 1.3em;
+	font-weight: 700;
+}
+.btn {
+	@extend .flat;
+
+	padding: 10px 15px;
+	background: lightgreen;
+	font-size: 1em;
+	cursor: pointer;
+
+	&:hover {
+		background: limegreen;
+	}
+}
+
+html, body, .body-row {
+	height: 100%;
+}
+
+.container {
+	max-width: 500px;
+	position: relative;
+
+	.task-wraper {
+		padding: 20px 0;
+
+		.task-fields {
+
+			position: relative;
+
+			.row {
+				&:first-child {
+					width: 100%;
+					padding: 10px 0;
+				}
+				&:nth-child(3) {
+					.show-preview {
+						float: left;
+					}
+					.submit-task {
+						float: right;
+					}
+				}
+			}
+
+			.preview {
+				display: none;
+				padding: 10px 0;
+
+				.task-header {
+					.img-wrap {
+						@extend .img-wraper;
+					}
+					.user-name {
+						@extend .flat;
+					}
+				}
+
+				.text {
+					text-align: justify;
+				}
+			}
+
+			input, textarea {
+				width: 100%;
+				outline: none;
+			}
+			input {
+				margin-bottom: 10px;
+				padding: 0 3px;
+				font-size: 1.3em;
+				color: #000;
+			}
+
+			.photo-upload-wrap {
+				@extend .flat;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				margin-bottom: 10px;
+				cursor: pointer;
+
+				input[name=upload-photo],
+				.upload-new-avatar-err {
+					display: none;
+				}
+				.click-to-upload-avatar {
+					text-align: center;
+				}
+			}
+
+			.main-textarea {
+				padding-right: 0;
+			}
+
+			.dropdown {
+				position: absolute;
+				z-index: 2;
+				right: 0px;
+				bottom: -60px;
+				padding: 0px;
+
+				.dropdown-menu {
+					right:0;
+					left: auto;
+				}
+			}
+		}
+
+
+		.task-list {
+			@extend .no-m-p;
+
+			margin-top: 10px;
+			border-top: 1px solid lightgrey;
+
+			.task {
+				position: relative;
+				padding: 10px 0;
+				transition: 0.3s;
+
+				.task-header {
+					.img-wrap {
+						@extend .img-wraper;
+					}
+					.user-name {
+						@extend .flat;
+					}
+				}
+
+				.text {
+					text-align: justify;
+				}
+
+				.fa-check {
+					position: absolute;
+					right: 15px;
+					bottom: 15px;
+					color: lightgrey;
+					font-size: 1.5em;
+					cursor: pointer;
+				}
+			}
+		}
+	}
+
+	.sign-in {
+		position: absolute;
+		top: 25px;
+		right: -10px;
+		font-size: 3em;
+		cursor: pointer;
+
+		&:hover {
+			color: darkgrey;
+		}
+
+		.dropdown-menu {
+			left: auto;
+			right: 0;
+			padding: 10px;
+
+			input {
+				&:last-child {
+					margin-top: 10px;
+					float: right;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.btn {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+}

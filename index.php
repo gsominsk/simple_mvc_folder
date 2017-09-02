@@ -22,5 +22,7 @@ $router = new Router($registry);
 $registry->set ('router', $router);
 $router->setPath (site_path . 'controllers');
 
+session_start();
+
 $router->delegate();
 ?>

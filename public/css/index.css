@@ -1,0 +1,133 @@
+.no-m-p, .container .task-wraper .task-list {
+  padding: 0;
+  margin: 0;
+  list-style: none; }
+
+.img-wraper, .container .task-wraper .task-fields .preview .task-header .img-wrap, .container .task-wraper .task-list .task .task-header .img-wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden; }
+  .img-wraper img, .container .task-wraper .task-fields .preview .task-header .img-wrap img, .container .task-wraper .task-list .task .task-header .img-wrap img {
+    max-width: 100%;
+    max-height: 100%; }
+
+.flat, .btn, .container .task-wraper .task-fields .preview .task-header .user-name, .container .task-wraper .task-fields .photo-upload-wrap, .container .task-wraper .task-list .task .task-header .user-name {
+  font-size: 1.3em;
+  font-weight: 700; }
+
+.btn {
+  padding: 10px 15px;
+  background: lightgreen;
+  font-size: 1em;
+  cursor: pointer; }
+  .btn:hover {
+    background: limegreen; }
+
+html, body, .body-row {
+  height: 100%; }
+
+.container {
+  max-width: 500px;
+  position: relative; }
+  .container .task-wraper {
+    padding: 20px 0; }
+    .container .task-wraper .task-fields {
+      position: relative; }
+      .container .task-wraper .task-fields .row:first-child {
+        width: 100%;
+        padding: 10px 0; }
+      .container .task-wraper .task-fields .row:nth-child(3) .show-preview {
+        float: left; }
+      .container .task-wraper .task-fields .row:nth-child(3) .submit-task {
+        float: right; }
+      .container .task-wraper .task-fields .preview {
+        display: none;
+        padding: 10px 0; }
+        .container .task-wraper .task-fields .preview .text {
+          text-align: justify; }
+      .container .task-wraper .task-fields input, .container .task-wraper .task-fields textarea {
+        width: 100%;
+        outline: none; }
+      .container .task-wraper .task-fields input {
+        margin-bottom: 10px;
+        padding: 0 3px;
+        font-size: 1.3em;
+        color: #000; }
+      .container .task-wraper .task-fields .photo-upload-wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        margin-bottom: 10px;
+        cursor: pointer; }
+        .container .task-wraper .task-fields .photo-upload-wrap input[name=upload-photo],
+        .container .task-wraper .task-fields .photo-upload-wrap .upload-new-avatar-err {
+          display: none; }
+        .container .task-wraper .task-fields .photo-upload-wrap .click-to-upload-avatar {
+          text-align: center; }
+      .container .task-wraper .task-fields .main-textarea {
+        padding-right: 0; }
+      .container .task-wraper .task-fields .dropdown {
+        position: absolute;
+        z-index: 2;
+        right: 0px;
+        bottom: -60px;
+        padding: 0px; }
+        .container .task-wraper .task-fields .dropdown .dropdown-menu {
+          right: 0;
+          left: auto; }
+    .container .task-wraper .task-list {
+      margin-top: 10px;
+      border-top: 1px solid lightgrey; }
+      .container .task-wraper .task-list .task {
+        position: relative;
+        padding: 10px 0;
+        -webkit-transition: 0.3s;
+        transition: 0.3s; }
+        .container .task-wraper .task-list .task .text {
+          text-align: justify; }
+        .container .task-wraper .task-list .task .fa-check {
+          position: absolute;
+          right: 15px;
+          bottom: 15px;
+          color: lightgrey;
+          font-size: 1.5em;
+          cursor: pointer; }
+  .container .sign-in {
+    position: absolute;
+    top: 25px;
+    right: -10px;
+    font-size: 3em;
+    cursor: pointer; }
+    .container .sign-in:hover {
+      color: darkgrey; }
+    .container .sign-in .dropdown-menu {
+      left: auto;
+      right: 0;
+      padding: 10px; }
+      .container .sign-in .dropdown-menu input:last-child {
+        margin-top: 10px;
+        float: right; }
+
+@media (max-width: 576px) {
+  .btn {
+    width: 100%;
+    margin-bottom: 10px; } }
+
+/*# sourceMappingURL=index.css.map */

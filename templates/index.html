@@ -1,8 +1,116 @@
+<!DOCTYPE>
 <html>
 	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+		<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+		<script src='https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js'></script>
+		<script src="https://unpkg.com/vue"></script>
+
+		<link rel="stylesheet" href="public/css/index.css">
+		<script src="public/js/index.js"></script>
 	</head>
 	<body>
-		hello
+		<div class="container">
+			<div class="row body-row">
+				<div class="col-xs-12 col-sm-12">
+					<div class="task-wraper">
+						<div class="task-fields">
+							<div class="row">
+								<div class="col-xs-12 col-sm-7 col-md-7 ">
+									<input type="text" placeholder="name" name="taskName" required>
+									<input type="email" placeholder="email" name="taskEmail" required>
+								</div>
+								<div class="col-xs-12 col-sm-5 col-md-5 photo-upload-wrap">
+									<div class="click-to-upload-avatar">
+										click to upload
+									</div>
+									<i class="fa fa-cloud-upload" aria-hidden="true"></i>
+									<input type="file" name="upload-photo">
+									<div class="upload-new-avatar-err">
+										SOME ERROR
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-12 col-md-12 main-textarea">
+									<textarea name="task-text" id="" cols="30" rows="3" placeholder="Input some note." required></textarea>
+								</div>
+							</div>
+							<div class="preview-wraper">
+								<!--<preview-task v-bind:item="task"></preview-task>-->
+								<div class="row preview">
+									<div class="col-xs-12 col-sm-7 push-sm-5 col-md-7 push-md-5">
+										<div class="task-header clearfix">
+											<div class="user-name">
+												{{task.name}}
+											</div>
+											<div class="email">
+												{{task.email}}
+											</div>
+										</div>
+										<div class="text">
+											{{task.text}}
+										</div>
+									</div>
+									<div class="col-xs-12 col-sm-5 pull-sm-7 col-md-5 pull-md-7">
+										<div class="task-header clearfix">
+											<div class="img-wrap">
+												<img v-bind:src="task.src" alt="">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-xs-12 col-sm-6 col-md-6 ">
+									<div class="btn show-preview">
+										show preview
+									</div>
+								</div>
+								<div class="col-xs-12 col-sm-6 col-md-6 ">
+									<div class="btn submit-task">
+										submit
+									</div>
+								</div>
+							</div>
+							<div class="dropdown show">
+								<a class="btn btn-secondary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+								</a>
+
+								<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+									<a class="dropdown-item disabled" href="#">Sort by:</a>
+									<a class="dropdown-item" href="#" v-on:click="sortList('checked')">Finished</a>
+									<a class="dropdown-item" href="#" v-on:click="sortList('name')">Name</a>
+									<a class="dropdown-item" href="#" v-on:click="sortList('email')">Email</a>
+								</div>
+							</div>
+						</div>
+
+						<ul class="task-list">
+							<preview-task v-for="task, index in tasks" v-bind:item="task" v-bind:key="index"></preview-task>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="sign-in">
+				<div class="" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-sign-in" aria-hidden="true"></i>
+				</div>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+					Login:
+					<input type="text" name="log_name">
+					Pass:
+					<input type="password" name="log_pass">
+					<input type="button" name="log_btn" class="btn" value="log in">
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
